@@ -1,40 +1,41 @@
-"use client";
+'use client'
 
-import CustomImageRenderer from "./renderers/CustomImageRenderer";
-import CustomCodeRenderer from "./renderers/CustomCodeRenderer";
-
-
-import dynamic from "next/dynamic";
+import CustomCodeRenderer from '@/components/renderers/CustomCodeRenderer'
+import CustomImageRenderer from '@/components/renderers/CustomImageRenderer'
+import { FC } from 'react'
+import dynamic from 'next/dynamic'
 
 const Output = dynamic(
-  async () => (await import("editorjs-react-renderer")).default,
+  async () => (await import('editorjs-react-renderer')).default,
   { ssr: false }
-);
+)
 
 interface EditorOutputProps {
-  content: any;
+  content: any
 }
 
 const renderers = {
-    image: CustomImageRenderer,
-    code:CustomCodeRenderer,
+  image: CustomImageRenderer,
+  code: CustomCodeRenderer,
 }
-
 
 const style = {
-    paragraph: {
-        fontSize: '0.875rem',
-        lineHeight: '1.25rem'
-    }
+  paragraph: {
+    fontSize: '0.875rem',
+    lineHeight: '1.25rem',
+  },
 }
 
-const EditorOutput = ({ content }: EditorOutputProps) => {
-  return <Output 
-  style={style}
-  className='text-sm'
-  renderers={renderers}
-  data={content}
-  />;
-};
+const EditorOutput: FC<EditorOutputProps> = ({ content }) => {
+  return (
+    // @ts-expect-error
+    <Output
+      style={style}
+      className='text-sm'
+      renderers={renderers}
+      data={content}
+    />
+  )
+}
 
-export default EditorOutput;
+export default EditorOutput
