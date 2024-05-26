@@ -54,14 +54,14 @@ const UserNameForm = ({ user, className, ...props }: UserNameFormProps) => {
           return toast({
             title: "Username already taken.",
             description: "Please choose another username.",
-            varinat: "destructive",
+            variant: "destructive",
           });
         }
       }
       return toast({
         title: "Something went wrong.",
         description: "Your username was not updated. Please try again.",
-        varinat: "destructive",
+        variant: "destructive",
       });
     },
     onSuccess: () => {
