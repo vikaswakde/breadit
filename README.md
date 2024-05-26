@@ -1,7 +1,6 @@
 # Demo  - [Live](https://bredit-a-reddit-clone.vercel.app/)
 
-[![Breadit Demo])])
-
+[![Breadit Demo](https://img.youtube.com/vi/Vrm3Fy-AFzY/0.jpg)](https://www.youtube.com/watch?v=Vrm3Fy-AFzY)
 
 
 # Breadit
